@@ -1,6 +1,6 @@
 # 机器学习课程大作业（ReChorus2.0 + FuXiAlpha 复现）
 
-本仓库用于辅助老师/助教在 **Windows** 环境下快速把代码跑通，并复现我在报告中使用的结果汇总与图表。
+本仓库用于辅助老师/助教在 **Windows** 环境下快速把代码跑通，并复现我们组在报告中使用的结果汇总与图表。
 
 - 主要框架：`ReChorus2.0/`（推荐从这里运行与复现实验）
 - 复现模型：FuXiAlpha（已集成到 ReChorus2.0 的 sequential 模型体系中）
@@ -49,63 +49,9 @@ pip install -r requirements.txt
 
 ---
 
-## 快速复现（不重新训练，推荐）
+## 从零训练
 
-说明：本项目训练日志在我本机累计约数 GB，无法直接上传到 GitHub（且容易触发 100MB 单文件/仓库体积限制）。
-如果你手头**已经有日志压缩包**（例如助教检查用的 logs.zip），请解压到仓库根目录的 `log/` 或 `ReChorus2.0/log/`，即可走本节流程。
-
-如果没有训练日志，请直接跳到后面的「从零训练（可选，耗时）」跑一个最小例子验证流程。
-
-该路线会基于仓库内已存在的日志 `log/`，重新生成：
-- `ReChorus2.0/results/summary_runs.csv`（逐次 run 明细）
-- `ReChorus2.0/results/summary_agg.csv`（按模型/数据集聚合 mean±std）
-- `ReChorus2.0/figures/` 下的若干图片（报告中引用）
-
-### 1) 重新汇总日志到 CSV
-
-在仓库根目录执行：
-
-```powershell
-python ReChorus2.0\tools\summarize_results.py --rechorus_root ReChorus2.0
-```
-
-说明：脚本会同时扫描 `ReChorus2.0/log/` 和仓库根目录的 `log/`，不会漏掉本项目训练产出的日志。
-
-> Windows 提示：如果你用 Excel 打开了 `summary_agg.csv`，会导致“Permission denied”。请先关闭占用文件的程序再跑。
-
-### 2) 生成主对比柱状图（HR@10 / NDCG@10）
-
-```powershell
-python ReChorus2.0\tools\plot_results.py --rechorus_root ReChorus2.0 --split test --metric HR@10 NDCG@10 --datasets MovieLens_1M_ep50 Grocery_and_Gourmet_Food_grocery_ep50_h50_cmp
-```
-
-输出目录：`ReChorus2.0/figures/`。
-
-### 3) 生成消融对比图（含 noams）
-
-```powershell
-python ReChorus2.0\tools\plot_results.py --rechorus_root ReChorus2.0 --split test --metric HR@10 NDCG@10 --datasets MovieLens_1M_ep50_abla Grocery_and_Gourmet_Food_grocery_ep50_h50_abla
-```
-
-### 4) 生成 ML-1M sweep 图（三超参可视化）
-
-```powershell
-python ReChorus2.0\tools\plot_fuxi_sweep_ml1m_small12.py
-```
-
-输出：`ReChorus2.0/figures/ml1m_fuxi_sweep_small12_ss0.png`
-
-### 5) 生成两数据集训练 loss 曲线
-
-```powershell
-python ReChorus2.0\tools\plot_train_loss_curves_two_datasets.py
-```
-
----
-
-## 从零训练（可选，耗时）
-
-如果需要从零训练验证流程，可按以下方式跑一个最小例子。
+说明：本项目训练日志在我本机累计约数 GB，无法直接上传到 GitHub（且容易触发 100MB 单文件/仓库体积限制）。如果需要从零训练验证流程，可按以下方式跑一个最小例子。
 
 ### 1) 进入 ReChorus2.0 根目录
 
