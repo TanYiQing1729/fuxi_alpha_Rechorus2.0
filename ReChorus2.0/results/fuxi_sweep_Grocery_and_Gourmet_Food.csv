@@ -1,0 +1,9 @@
+dataset,model,appendix,split,lr,attn_dropout,n,HR@10_mean,HR@10_std,NDCG@10_mean,NDCG@10_std
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,dev,0.0005,0.0,1,0.4923,0.0,0.3152,0.0
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,test,0.0005,0.0,1,0.444,0.0,0.2723,0.0
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,dev,0.0005,0.1,1,0.4971,0.0,0.31,0.0
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,test,0.0005,0.1,1,0.4591,0.0,0.2751,0.0
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,dev,0.001,0.0,3,0.4732799999999999,0.03379418589047528,0.28612000000000004,0.03312637921656998
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,test,0.001,0.0,3,0.42813999999999997,0.03547883876340937,0.24984,0.029465624038869428
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,dev,0.001,0.1,1,0.5052,0.0,0.3191,0.0
+Grocery_and_Gourmet_Food,FuXiAlpha,_grocery_sweep_h50_ep30_v2,test,0.001,0.1,1,0.4648,0.0,0.2838,0.0

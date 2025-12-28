@@ -1,0 +1,37 @@
+# Python environments
+venv/
+.venv/
+ReChorus2.0/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Large experiment artifacts (do NOT push to GitHub)
+log/
+model/
+ReChorus2.0/log/
+ReChorus2.0/model/
+
+# Datasets (copyright/size)
+ReChorus2.0/data/**
+!ReChorus2.0/data/README.md
+
+# Common training outputs
+*.pt
+*.pth
+*.ckpt
+
+# Temporary files
+*.tmp
+*.new
